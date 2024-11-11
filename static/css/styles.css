@@ -1,0 +1,125 @@
+/*@font-face {
+    font-family: 'Times New Roman';
+    src: url('fonts/Times New Roman.ttf') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Times New Roman', serif; 
+}
+*/
+
+
+.animated-image {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Durée de la transition */
+}
+
+.animated-image:hover {
+    transform: translateY(-10px); /* Déplace l'image vers le haut */
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5); /* Ajoute une ombre portée */
+}
+
+@keyframes zoomIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.zoom-in {
+    opacity: 0; /* Initial state: hidden */
+    animation: zoomIn 1.5s ease forwards;
+}
+
+@keyframes scrollFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(25px); /* Fait glisser vers le bas */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Retourne à la position normale */
+    }
+}
+
+.scroll-fade-in {
+    opacity: 0; /* Initial state: hidden */
+    animation: scrollFadeIn 1s ease forwards; /* Animation à la fin */
+}
+
+/* Utilisation de JavaScript pour détecter le défilement et appliquer l'animation */
+
+
+/* Animation d'entrée et de sortie*/
+@keyframes fadeInZoom {
+    0% {
+        opacity: 0; /* Complètement transparent au départ */
+        transform: scale(0.9); /* Réduit légèrement la taille */
+    }
+    100% {
+        opacity: 1; /* Complètement visible à la fin */
+        transform: scale(1); /* Taille normale à la fin */
+    }
+}
+
+.animate-fade-in-zoom {
+    animation: fadeInZoom 0.8s ease forwards; /* Animation avec une durée et une courbe */
+}
+
+.section-content {
+    transition: opacity 0.5s; /* Transition douce pour l'opacité */
+}
+
+
+#scrollToTopBtn {
+    display: none; /* Cacher le bouton par défaut */
+    transition: opacity 0.3s;
+    border-radius: 10%;
+    width: 40px;
+    height: 40px;
+}
+
+#scrollToTopBtn.show {
+    display: block; /* Afficher le bouton quand la classe "show" est ajoutée */
+}
+
+#scrollToTopBtn:hover {
+    transform: scale(1.1);
+}
+
+
+/* Ajoutez cette classe CSS pour l'animation */
+.btn-animation {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-animation:hover {
+    transform: scale(1.05); /* Agrandit le bouton légèrement */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Ajoute une ombre */
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+    75% {
+        transform: translateX(-5px);
+    }
+}
+
+.shake-animation {
+    animation: shake 0.3s ease-in-out infinite;
+    /* Répéter l'animation à l'infini */
+}
+
